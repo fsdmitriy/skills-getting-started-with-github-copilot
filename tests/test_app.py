@@ -9,7 +9,7 @@ changes to the global ``activities`` dictionary are discarded between tests.
 def test_root_redirects_to_static_index(client):
     # Arrange: nothing special – client fixture already set up
     # Act
-    resp = client.get("/")
+    resp = client.get("/", follow_redirects=False)
     # Assert
     assert resp.status_code == 307
     assert resp.headers["location"] == "/static/index.html"
