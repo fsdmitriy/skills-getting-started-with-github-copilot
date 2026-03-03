@@ -48,3 +48,16 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Running tests
+
+The project includes a basic test suite using ``pytest``. To execute the
+backend tests run from the repository root:
+
+```bash
+pip install -r requirements.txt  # ensures pytest is available
+pytest
+```
+
+Tests live in the ``tests/`` directory and are automatically discovered by
+pytest thanks to the ``testpaths`` setting in ``pytest.ini``.
